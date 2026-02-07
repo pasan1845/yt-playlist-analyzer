@@ -9,7 +9,7 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=[
-        "https://your-blog-name.blogspot.com", # ඔයාගේ blogger link එක මෙතන දාන්න
+        "https://yt-playlist-analyzer.blogspot.com/", # ඔයාගේ blogger link එක මෙතන දාන්න
         "http://localhost:8000",                # පරීක්ෂණ කටයුතු සඳහා
         "null"                                  # සමහර විට Local file වලින් run කරන විට අවශ්‍ය වේ
     ],
@@ -64,4 +64,5 @@ def analyze_playlist(data: PlaylistRequest, x_api_key: str = Header(None)):
             }
 	
     except Exception as e:
+
         return {"status": "error", "message": str(e)}
